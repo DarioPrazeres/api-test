@@ -15,10 +15,10 @@ Content-Type: application/json; charset=utf-8
 GET http://localhost:3000/subscribers/12
 
 ###
-DELETE http://localhost:3000/subscribers/434
+DELETE http://localhost:3000/subscribers/6282c8fcf83bbb31c34087a9
 
 ###
-PATCH  http://localhost:3000/subscribers/6282cc3bf83bbb31c34087ac
+PATCH http://localhost:3000/subscribers/6282c8fcf83bbb31c34087a9
 Content-Type: application/json; charset=utf-8
 
 {

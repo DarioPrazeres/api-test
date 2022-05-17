@@ -7,8 +7,8 @@ router.get('/', async (req, res, next) => {
     try {
         const subscribers = await Subscriber.find();
         res.json(subscribers)
-    } catch (error) {
-        res.status(500).json({message: error.message})
+    } catch (err) {
+        res.status(500).json({message: err.message})
     }
 });
 
@@ -27,8 +27,8 @@ router.post('/', async (req, res, next) => {
     try {
         const newSubscriber = await subscriber.save();
         res.status(201).json(newSubscriber)
-    } catch (error) {
-        res.status(400).json({message:error.message})
+    } catch (err) {
+        res.status(400).json({message:err.message})
     }
 });
 //Updating One
@@ -42,8 +42,8 @@ router.patch('/', getSubscriber, async (req, res, next) => {
     try {
         const updateSubscriber = await res.subscriber.save();
         res.json(updateSubscriber);
-    } catch (error) {
-        res.status(400).json({message: error.message})
+    } catch (err) {
+        res.status(400).json({message: err.message})
     }
 });
 //Deleting One
@@ -51,8 +51,8 @@ router.delete('/', getSubscriber, async (req, res, next) => {
     try {
         await res.subscriber.remove()
         res.json({message: 'Deleted Subscriber!'})
-    } catch (error) {
-        res.status(500).json({message: error.message})
+    } catch (err) {
+        res.status(500).json({message: err.message})
     }
 });
 
@@ -63,8 +63,8 @@ async function getSubscriber(req, res, next){
         if(subscriber == null){
             return res.status(404).json({message: 'Subscriber Not Found!'})
         }
-    } catch (error) {
-        return res.status(500).json({message: error.message})
+    } catch (err) {
+        return res.status(500).json({message: err.message})
     }
     res.subscriber = subscriber;
     next();
