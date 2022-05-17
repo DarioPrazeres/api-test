@@ -3,7 +3,7 @@ const express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 
-mongoose.connect(process.env.DB_LINK , {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://DarioPrazeres:Fernandes1973@cluster0.xvrcp.mongodb.net/market?retryWrites=true&w=majority', {useNewUrlParser: true});
 const db = mongoose.connection
 db.on('error', (error) => console.error(error));
 db.once('open', () => console.log('Conneted to database'));
