@@ -6,7 +6,7 @@ const Subscriber = require('../models/subscriberModel');
 router.get('/', async (req, res, next) => {
     try {
         const subscribers = await Subscriber.find();
-        res.json(subscribers)
+        res.json({sub: subscribers})
     } catch (err) {
         res.status(500).json({message: err.message})
     }
@@ -14,7 +14,7 @@ router.get('/', async (req, res, next) => {
 
 //Getting One
 router.get('/:id', getSubscriber, (req, res, next) => {
-    res.json(res.subscriber);
+    res.json({oneSubscriber: res.subscriber});
 });
 //Creating One
 router.post('/', async (req, res, next) => {
@@ -41,7 +41,7 @@ router.patch('/', getSubscriber, async (req, res, next) => {
     }
     try {
         const updateSubscriber = await res.subscriber.save();
-        res.json(updateSubscriber);
+        res.json({updateSub: updateSubscriber});
     } catch (err) {
         res.status(400).json({message: err.message})
     }

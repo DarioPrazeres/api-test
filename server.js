@@ -12,4 +12,7 @@ app.use(express.json())
 
 var subsRouter = require('./router/subscribers');
 app.use('/subscribers', subsRouter)
+app.get("/api", (req, res) => {
+    res.json({ message: "Hello from server!" });
+});
 app.listen(3000, () => {console.log('Server Started!')})
