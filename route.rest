@@ -12,10 +12,10 @@ Content-Type: application/json; charset=utf-8
     "subscriberToChannel": "Dp Channel"
 }
 ###
-GET http://localhost:3000/subscribers/12
+GET http://localhost:3000/subscribers/62839c8613a012f1370755dc
 
 ###
-DELETE http://localhost:3000/subscribers/6282c8fcf83bbb31c34087a9
+DELETE http://localhost:3000/subscribers/62839c8613a012f1370755dc
 
 ###
 PATCH http://localhost:3000/subscribers/6282c8fcf83bbb31c34087a9
@@ -24,3 +24,6 @@ Content-Type: application/json; charset=utf-8
 {
     "name": "Dario Edgar Prazeres"
 }
+
+###
+GET http://localhost:3000/api
